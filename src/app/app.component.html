@@ -1,0 +1,21 @@
+<input
+  (keyup)="updateRegistration('name', nameInput.value)"
+  placeholder="Name"
+  #nameInput
+/>
+<select
+  name="faction"
+  title="Faction"
+  (change)="updateRegistration('faction', factionSelect.value)"
+  #factionSelect
+>
+  <option value="" selected disabled hidden>Choose a faction</option>
+  <option value="VOID">Void</option>
+  <option value="GALATIC">Galatic</option>
+  <option value="QUANTUM">Quantum</option>
+</select>
+<button (click)="registerAgent()">Register New Agent</button>
+<div *ngIf="id">
+  <h1>{{ id }}</h1>
+  <button (click)="copyId()">copy</button>
+</div>
